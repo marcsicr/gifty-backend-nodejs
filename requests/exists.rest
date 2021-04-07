@@ -1,0 +1,7 @@
+HEAD http://localhost:3005/user/exists/pepito
+
+
+
+###
+HEAD http://localhost:3005/user/exists/a
+

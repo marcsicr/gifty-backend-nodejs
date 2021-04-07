@@ -1,0 +1,15 @@
+@token = eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjYwNjcyNWZkZTNkNWY1MmZiNDIyNmE0ZCIsInVzZXJuYW1lIjoidXNlcjEiLCJpYXQiOjE2MTczODIzMTJ9.j279pyt78LpNgMe3o_D7vSbZ-5H9kINciLqP9DuW-_U
+@AuthorizationHeader = Authorization: Bearer {{token}}
+
+POST http://localhost:3005/user/favorites/randomgif
+{{AuthorizationHeader}}
+
+
+###
+DELETE http://localhost:3005/user/favorites/randomgif
+{{AuthorizationHeader}}
+
+###
+GET http://localhost:3005/user/favorites
+Content-Type: application/application/json
+{{AuthorizationHeader}}

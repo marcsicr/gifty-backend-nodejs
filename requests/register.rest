@@ -1,0 +1,17 @@
+POST http://localhost:3005/user/register
+Content-Type: application/json
+
+{
+    "username":"pepito",
+    "password": "fw8ru3wrfwe"
+}
+
+###
+
+POST http://localhost:3005/user/register
+Content-Type: application/json
+
+{
+    "username":"noexists",
+    "password": "fw8ru3wrfwe"
+}
