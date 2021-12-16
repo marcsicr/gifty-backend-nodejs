@@ -26,9 +26,11 @@ This is backend service for Gifty browser app that allows users to register, log
 ### Option 2 - Custom configuration
 2. Install NPM packages
     ````sh
+    cd gifty-backend-nodejs
+    cd express-backend
     npm install
     ````
-3. Create **.env** file in the root directiory of this project. Add your specific MongoDB details and JWT signing key for example:
+3. Create **.env** file inside **express-backend** directory with your specific MongoDB details and JWT signing key. For example:
     ```
     DB_HOST=localhost
     DB_PORT=27017
