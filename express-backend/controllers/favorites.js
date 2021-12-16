@@ -1,5 +1,6 @@
 const favsRouter = require('express').Router()
 const {loginFilter} = require('../middleware/userExtractor')
+const {okResponse} = require('../APIResponse')
 const User = require('../models/user')
 
 favsRouter.get('/', loginFilter,async (request,response) => {
@@ -8,11 +9,9 @@ favsRouter.get('/', loginFilter,async (request,response) => {
     if(!userId) return response.status(500)
 
     const user = await User.findById(userId)
-
-    console.log(userId)
+    
     console.log('Likes :' + user.likes)
-
-    response.json({data:{gifs:user.likes}})
+    response.json(okResponse({gifs:user.likes}))
 
 })
 

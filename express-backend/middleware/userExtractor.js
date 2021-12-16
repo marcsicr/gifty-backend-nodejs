@@ -1,4 +1,5 @@
 const jwt = require('jsonwebtoken')
+const {errorResponse} = require('../APIResponse')
 
 const loginFilter = (request,response,next) =>{
     
@@ -9,10 +10,9 @@ const loginFilter = (request,response,next) =>{
     }
 
     if(!token) {
-        return response.status(401).json({
-            success:false, 
-            errorMsg:'Missing token'
-        })
+        return response.status(401).json(
+            errorResponse({errorMsg:'Missing token'})
+        )
     }
 
     let decodedToken = ''
@@ -20,10 +20,9 @@ const loginFilter = (request,response,next) =>{
         decodedToken = jwt.verify(token,process.env.TOKEN_SIGN_KEY)
     }catch(error){
         console.error(error)
-        return response.status(401).json({
-            success:false, 
-            errorMsg:'Invalid token'
-        })
+        return response.status(401).json(
+            errorResponse({errorMsg:'Invalid token'})
+        )
     }
 
     request.userId = decodedToken.id

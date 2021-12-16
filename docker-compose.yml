@@ -1,0 +1,26 @@
+version: "3.8"
+services:
+  db:
+    image: mongo
+    container_name: gifty-mongodb
+    environment:
+      MONGO_INIT_DATABASE: gifty
+      MONGO_INITDB_ROOT_USERNAME: marcsicr
+      MONGO_INITDB_ROOT_PASSWORD: 1234
+    ports:
+      - "27017:27017"
+    networks:
+      - backend
+
+  express:
+    build: express-backend
+    ports:
+      - "3005:3005"
+    networks:
+      - backend
+    depends_on:
+      - "db"
+networks: 
+  backend:
+    driver: bridge
+  

@@ -4,7 +4,14 @@ const _ = require('underscore')
 const userSchema = new Schema({
     username:{type:String,unique:true},
     pwd:String,
-    likes:[{type:String}]
+    likes:[{type:String}],
+    settings:{
+        displayName:String,
+        about:String,
+        email:String,
+        rating:String,
+        avatar:String
+    }
 })
 
 userSchema.set('toJSON', {
@@ -12,7 +19,6 @@ userSchema.set('toJSON', {
         returnedObject.id = returnedObject._id
         delete returnedObject._id
         delete returnedObject.__v
-
         delete returnedObject.pwd
     }
 })

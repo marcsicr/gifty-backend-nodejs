@@ -1,0 +1,5 @@
+DB_HOST=db
+DB_PORT=27017
+DB_USER=marcsicr
+DB_PASS=1234
+TOKEN_SIGN_KEY=secret
