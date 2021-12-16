@@ -17,13 +17,13 @@ This is backend service for Gifty browser app that allows users to register, log
     git clone https://github.com/marcsicr/gifty-backend-nodejs
     ```
 
-### Option 1 - Docker 
+### Option 1 - **Docker**
 2. Build and deploy gifty-backend and MongoDB containers using **docker-compose**
     ```sh
     cd gifty-backend-nodejs
     docker-compose up
     ``` 
-### Option 2 - Custom configuration
+### Option 2 - **Custom configuration**
 2. Install NPM packages
     ````sh
     cd gifty-backend-nodejs
